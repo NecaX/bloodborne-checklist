@@ -136,7 +136,7 @@
     }
 
     function populateChecklists() {
-        $('input[type="checkbox"]').prop('checked', false);
+        $('input[type="checkbox"] class="strikethrough"').prop('checked', false);
         $.each(profiles[profilesKey][profiles.current].checklistData, function(index, value) {
             $('#' + index).prop('checked', value);
         });
@@ -185,7 +185,7 @@
 
     function addCheckbox(el) {
         var lines = $(el).html().split('\n');
-        lines[0] = '<label class="checkbox"><input type="checkbox" id="' + $(el).attr('data-id') + '">' + lines[0] + '</label>';
+        lines[0] = '<label class="checkbox"><input type="checkbox" id="' + $(el).attr('data-id') + '"><label class="strikethrough">' + lines[0] + '</label></label>';
         $(el).html(lines.join('\n'));
         if (profiles[profilesKey][profiles.current].checklistData[$(el).attr('data-id')] == true) {
             $('#' + $(el).attr('data-id')).prop('checked', true);
