@@ -177,7 +177,7 @@
                 this.innerHTML = '[DONE]';
                 $(this).removeClass('in_progress').addClass('done');
             } else {
-                this.innerHTML = '[' + overallChecked + '/' + overallCount + ']';
+                this.innerHTML = '[' + overallChecked + '/' + overallCount + ']' + ' (' + Math.round((overallChecked*100)/overallCount) + '%)';
                 $(this).removeClass('done').addClass('in_progress');
             }
         });
